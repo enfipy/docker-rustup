@@ -11,3 +11,6 @@ RUN wget https://www.openssl.org/source/openssl-1.0.2g.tar.gz \
     && make install \
     && ln -sf /usr/local/ssl/bin/openssl 'which openssl'
 RUN cargo install cargo-build-deps
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
